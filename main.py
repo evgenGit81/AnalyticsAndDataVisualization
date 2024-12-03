@@ -13,11 +13,17 @@ def main():
     # Fetch stock data
     stock_data = dd.fetch_stock_data(ticker, period)
 
+    #Добавление средних значений за период внутри выше принятого
+    period2 = input("Введите период для расчета среднего значения внутри выбранного периода (например, '3d' для одного месяца): ")
+    data3 = dd.calculate_and_display_average_price(stock_data, period2)
+
     # Add moving average to the data
     stock_data = dd.add_moving_average(stock_data)
 
+
+
     # Plot the data
-    dplt.create_and_save_plot(stock_data, ticker, period)
+    dplt.create_and_save_plot(stock_data, ticker, period, data3, period2)
 
 
 if __name__ == "__main__":
