@@ -17,5 +17,5 @@ def calculate_and_display_average_price(data, period2):
     data2 = pd.DataFrame(data['Close'])
     data3 = data2.resample(period2).mean() # рассчитывает среднее значение по заданному периоду
     data3 = data3.ffill() # Убирает NaN, если имеется
-    # print(data3)
+    print(data3)
     return data3
