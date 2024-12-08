@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbe9a5bc-2926-4052-96bf-6df4140211f3" name="Changes" comment="Введена функция расчета движения средней">
+    <list default="true" id="bbe9a5bc-2926-4052-96bf-6df4140211f3" name="Changes" comment="Введена функция рассчета средней цены закрытия по запросу внутри рассматриваемого периода по заданному временному периоду.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_download.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_download.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_plotting.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_plotting.py" afterDir="false" />
@@ -87,7 +87,31 @@
       <option name="project" value="LOCAL" />
       <updated>1733137199318</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Введена функция рассчета средней цены закрытия по запросу внутри рассматриваемого периода по заданному временному периоду.">
+      <option name="closed" value="true" />
+      <created>1733258376446</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1733258376446</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Введена функция рассчета средней цены закрытия по запросу внутри рассматриваемого периода по заданному временному периоду.">
+      <option name="closed" value="true" />
+      <created>1733258460787</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1733258460788</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Введена функция рассчета средней цены закрытия по запросу внутри рассматриваемого периода по заданному временному периоду.">
+      <option name="closed" value="true" />
+      <created>1733259194239</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733259194239</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -103,14 +127,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Введена функция расчета движения средней" />
-    <option name="LAST_COMMIT_MESSAGE" value="Введена функция расчета движения средней" />
+    <MESSAGE value="Введена функция рассчета средней цены закрытия по запросу внутри рассматриваемого периода по заданному временному периоду." />
+    <option name="LAST_COMMIT_MESSAGE" value="Введена функция рассчета средней цены закрытия по запросу внутри рассматриваемого периода по заданному временному периоду." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>18</line>
+          <line>22</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

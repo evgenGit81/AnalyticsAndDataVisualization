@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import pandas as pd
-import data_download as dd
 
 
 def create_and_save_plot(data, ticker, period, data3, period2, filename=None):
@@ -12,7 +11,8 @@ def create_and_save_plot(data, ticker, period, data3, period2, filename=None):
             dates2 = data3.index.to_numpy()
             plt.plot(dates, data['Close'].values, label='Close Price')
             plt.plot(dates, data['Moving_Average'].values, label='Moving Average')
-            plt.plot(dates2, data3['Close'].values, label=f'Среднее значение периода {period2}') # добавлен
+            # добавлен
+            plt.plot(dates2, data3['Close'].values, label=f'Среднее значение периода {period2}')
         else:
             print("Информация о дате отсутствует или не имеет распознаваемого формата.")
             return
@@ -23,14 +23,15 @@ def create_and_save_plot(data, ticker, period, data3, period2, filename=None):
             data3['Date'] = pd.to_datetime(data3['Date'])
         plt.plot(data['Date'], data['Close'], label='Close Price')
         plt.plot(data['Date'], data['Moving_Average'], label='Moving Average')
-        plt.plot(data3['Date'], data3['Close'].values, label=f'Среднее значение {period2}') #добавлен
+        # добавлен
+        plt.plot(data3['Date'], data3['Close'].values, label=f'Среднее значение {period2}')
     plt.title(f"{ticker} Цена акций с течением времени")
     plt.xlabel("Дата")
     plt.ylabel("Цена")
     plt.legend()
 
     if filename is None:
-        filename = f"{ticker}_{period}_{period2}stock_price_chart.png"
+        filename = f"{ticker}_{period}_{period2}_price_chart.png"
 
     plt.savefig(filename)
     print(f"График сохранен как {filename}")
