@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbe9a5bc-2926-4052-96bf-6df4140211f3" name="Changes" comment="Введена функция рассчета средней цены закрытия по запросу внутри рассматриваемого периода по заданному временному периоду.">
+    <list default="true" id="bbe9a5bc-2926-4052-96bf-6df4140211f3" name="Changes" comment="Введена функция анализирующая данные и уведомляет&#10;пользователя, если цена акций колебалась более     чем на заданный процент за период. Колебания оцениваются относительно среднего значения за рассматриваемый момент времени, сравнение ведется  к самому низкому или высокому значению и к цене закрытия дополнительно добавлябтся два столбца с &#10;сигналами &quot;Yes&quot; в результирующую таблицу и выводятся в консоль упомянутые столбцы.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_download.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_download.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_plotting.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_plotting.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +108,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733259194239</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Введена функция анализирующая данные и уведомляет&#10;пользователя, если цена акций колебалась более     чем на заданный процент за период. Колебания оцениваются относительно среднего значения за рассматриваемый момент времени, сравнение ведется  к самому низкому или высокому значению и к цене закрытия дополнительно добавлябтся два столбца с &#10;сигналами &quot;Yes&quot; в результирующую таблицу и выводятся в консоль упомянутые столбцы.">
+      <option name="closed" value="true" />
+      <created>1733676229784</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1733676229784</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -128,7 +133,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Введена функция расчета движения средней" />
     <MESSAGE value="Введена функция рассчета средней цены закрытия по запросу внутри рассматриваемого периода по заданному временному периоду." />
-    <option name="LAST_COMMIT_MESSAGE" value="Введена функция рассчета средней цены закрытия по запросу внутри рассматриваемого периода по заданному временному периоду." />
+    <MESSAGE value="Введена функция анализирующая данные и уведомляет&#10;пользователя, если цена акций колебалась более     чем на заданный процент за период. Колебания оцениваются относительно среднего значения за рассматриваемый момент времени, сравнение ведется  к самому низкому или высокому значению и к цене закрытия дополнительно добавлябтся два столбца с &#10;сигналами &quot;Yes&quot; в результирующую таблицу и выводятся в консоль упомянутые столбцы." />
+    <option name="LAST_COMMIT_MESSAGE" value="Введена функция анализирующая данные и уведомляет&#10;пользователя, если цена акций колебалась более     чем на заданный процент за период. Колебания оцениваются относительно среднего значения за рассматриваемый момент времени, сравнение ведется  к самому низкому или высокому значению и к цене закрытия дополнительно добавлябтся два столбца с &#10;сигналами &quot;Yes&quot; в результирующую таблицу и выводятся в консоль упомянутые столбцы." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

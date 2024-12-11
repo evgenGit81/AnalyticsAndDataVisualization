@@ -50,8 +50,13 @@ def notify_if_strong_fluctuations(data, threshold):
     data.loc[(1 - data['Median'] / data["Close"]) > (threshold / 100), [f"Signal_by_Close_{threshold}%"]] = "Yes"
     data.loc[(1 - data["Close"] / data['Median']) > (threshold / 100), [f"Signal_by_Close_{threshold}%"]] = "Yes"
 
-    pd.DataFrame(data).to_csv('out2.csv', index=True)
-
     print(data[f"Signal_by_High_Low_{threshold}%"])
     print("________________________________________")
     print(data[f"Signal_by_Close_{threshold}%"])
+
+
+def export_data_to_csv(data, filename):
+    """Результаты в файл с расширением .csv"""
+    pd.DataFrame(data).to_csv(f'{filename}.csv', index=True)
+
+    print(f"Файл {filename} был создан.")

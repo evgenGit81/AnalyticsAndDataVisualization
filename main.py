@@ -32,6 +32,10 @@ def main():
     threshold = float(input("Введите величину процента колебания цены: "))
     dd.notify_if_strong_fluctuations(stock_data, threshold)
 
+    print("_________________________________________________")
+    filename = input("Введите названия файла, для сохранения данных: ")
+    dd.export_data_to_csv(stock_data, filename)
+
 
 if __name__ == "__main__":
     main()
