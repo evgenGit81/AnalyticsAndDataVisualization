@@ -54,7 +54,6 @@ def notify_if_strong_fluctuations(data, threshold):
     print("________________________________________")
     print(data[f"Signal_by_Close_{threshold}%"])
 
-
 def export_data_to_csv(data, filename):
     """Результаты в файл с расширением .csv"""
     pd.DataFrame(data).to_csv(f'{filename}.csv', index=True)
