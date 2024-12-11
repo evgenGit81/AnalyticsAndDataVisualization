@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbe9a5bc-2926-4052-96bf-6df4140211f3" name="Changes" comment="Введена функция анализирующая данные и уведомляет&#10;пользователя, если цена акций колебалась более     чем на заданный процент за период. Колебания оцениваются относительно среднего значения за рассматриваемый момент времени, сравнение ведется  к самому низкому или высокому значению и к цене закрытия дополнительно добавлябтся два столбца с &#10;сигналами &quot;Yes&quot; в результирующую таблицу и выводятся в консоль упомянутые столбцы.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="bbe9a5bc-2926-4052-96bf-6df4140211f3" name="Changes" comment="Добавлена функция для сохранения результатов рассчета и модификации таблицы в формате .csv" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GithubDefaultAccount">
@@ -116,7 +115,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733676229784</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Добавлена функция для сохранения результатов рассчета и модификации таблицы в формате .csv">
+      <option name="closed" value="true" />
+      <created>1733942519662</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1733942519662</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -134,7 +141,8 @@
     <MESSAGE value="Введена функция расчета движения средней" />
     <MESSAGE value="Введена функция рассчета средней цены закрытия по запросу внутри рассматриваемого периода по заданному временному периоду." />
     <MESSAGE value="Введена функция анализирующая данные и уведомляет&#10;пользователя, если цена акций колебалась более     чем на заданный процент за период. Колебания оцениваются относительно среднего значения за рассматриваемый момент времени, сравнение ведется  к самому низкому или высокому значению и к цене закрытия дополнительно добавлябтся два столбца с &#10;сигналами &quot;Yes&quot; в результирующую таблицу и выводятся в консоль упомянутые столбцы." />
-    <option name="LAST_COMMIT_MESSAGE" value="Введена функция анализирующая данные и уведомляет&#10;пользователя, если цена акций колебалась более     чем на заданный процент за период. Колебания оцениваются относительно среднего значения за рассматриваемый момент времени, сравнение ведется  к самому низкому или высокому значению и к цене закрытия дополнительно добавлябтся два столбца с &#10;сигналами &quot;Yes&quot; в результирующую таблицу и выводятся в консоль упомянутые столбцы." />
+    <MESSAGE value="Добавлена функция для сохранения результатов рассчета и модификации таблицы в формате .csv" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлена функция для сохранения результатов рассчета и модификации таблицы в формате .csv" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
