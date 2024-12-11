@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbe9a5bc-2926-4052-96bf-6df4140211f3" name="Changes" comment="Добавлена функция для сохранения результатов рассчета и модификации таблицы в формате .csv" />
+    <list default="true" id="bbe9a5bc-2926-4052-96bf-6df4140211f3" name="Changes" comment="Добавлена функция для сохранения результатов рассчета и модификации таблицы в файл в формате .csv" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -123,7 +123,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733942519662</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Добавлена функция для сохранения результатов рассчета и модификации таблицы в фапйл в формате .csv">
+      <option name="closed" value="true" />
+      <created>1733943006433</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1733943006433</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Добавлена функция для сохранения результатов рассчета и модификации таблицы в файл в формате .csv">
+      <option name="closed" value="true" />
+      <created>1733943212967</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1733943212967</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -142,7 +158,10 @@
     <MESSAGE value="Введена функция рассчета средней цены закрытия по запросу внутри рассматриваемого периода по заданному временному периоду." />
     <MESSAGE value="Введена функция анализирующая данные и уведомляет&#10;пользователя, если цена акций колебалась более     чем на заданный процент за период. Колебания оцениваются относительно среднего значения за рассматриваемый момент времени, сравнение ведется  к самому низкому или высокому значению и к цене закрытия дополнительно добавлябтся два столбца с &#10;сигналами &quot;Yes&quot; в результирующую таблицу и выводятся в консоль упомянутые столбцы." />
     <MESSAGE value="Добавлена функция для сохранения результатов рассчета и модификации таблицы в формате .csv" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена функция для сохранения результатов рассчета и модификации таблицы в формате .csv" />
+    <MESSAGE value="Добавлена функция для сохранения результатов рассчета и модификации таблицы в фапйл в формате .csv" />
+    <MESSAGE value="Добавлена функция для сохранения результатов рассчета и модификации таблицы в файл в формате .csv" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлена функция для сохранения результатов рассчета и модификации таблицы в файл в формате .csv" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
