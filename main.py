@@ -10,7 +10,7 @@ def main():
     print("""Общие периоды времени для данных о запасах включают:
            1д, 5д, 1мес, 3мес, 6мес, 1г, 2г, 5г, 10л, с начала года, макс.""")
 
-    ticker = input("Введите тикер акции (например, «AAPL» для Apple Inc):»")
+    ticker = input("Введите тикер акции (например, «AAPL» для Apple Inc): ")
     period = input("Введите период для данных (например, '1mo' для одного месяца): ")
 
     # Fetch stock data
@@ -24,8 +24,11 @@ def main():
     # Add moving average to the data
     stock_data = dd.add_moving_average(stock_data)
 
+    alpha_ = float(input("Введите коэффициент alpha (0 - 1)) для рассчета RSI: "))
+    stock_data = dd.rsi_func(stock_data, alpha_)
+
     # Plot the data
-    dplt.create_and_save_plot(stock_data, ticker, period, data3, period2)
+    dplt.create_and_save_plot(stock_data, ticker, period, data3, period2, alpha_)
 
     #
     print("_________________________________________________")
@@ -34,7 +37,9 @@ def main():
 
     print("_________________________________________________")
     filename = input("Введите названия файла, для сохранения данных: ")
+    filename = filename + f'_{period}' + f'_{period2}' + f'_{alpha_}'
     dd.export_data_to_csv(stock_data, filename)
+    input("Нажмите Enter для завершения.")
 
 
 if __name__ == "__main__":

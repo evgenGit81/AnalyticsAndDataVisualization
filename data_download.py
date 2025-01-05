@@ -6,7 +6,6 @@ def fetch_stock_data(ticker, period='1mo'):
     """Берет данные по ценам акций в указанный временной период"""
     stock = yf.Ticker(ticker)
     data = stock.history(period=period)
-    # print(data)
     pd.DataFrame(data).to_csv('out.csv', index=True)
 
     return data
@@ -60,3 +59,24 @@ def export_data_to_csv(data, filename):
     pd.DataFrame(data).to_csv(f'{filename}.csv', index=True)
 
     print(f"Файл {filename} был создан.")
+
+
+def rsi_func(data, alpha=0.1):
+    """ Функция расчитывает индикатор RSI.
+    По заданному коэффициенту alpha, который задается
+    в пределах от 0 до 1, чем выше коэффициент, тем меньше влияние
+    предыдущих значений, расчитывается скользящая экспоненциальная
+    средняя ЕМА, благодаря которой расчитывается RSI"""
+    delta = data["Close"].diff()
+    """Рассчет разницы между двумя близлижайшими значениями цен закрытия
+    для определения локального роста или падения цен."""
+    up = delta.clip(lower=0)
+    down = (- 1) * delta.clip(upper=0)
+
+    ema_u = pd.DataFrame(up).ewm(alpha=alpha, adjust=False).mean()
+    ema_d = pd.DataFrame(down).ewm(alpha=alpha, adjust=False).mean()
+    data[f"RSI alpha={alpha}"] = 100 * (ema_u / (ema_u + ema_d))
+    print(data[f"RSI alpha={alpha}"])
+
+    return data
+    
