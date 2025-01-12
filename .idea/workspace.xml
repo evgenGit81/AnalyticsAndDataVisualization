@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbe9a5bc-2926-4052-96bf-6df4140211f3" name="Changes" comment="Добавлена функция для функция для рассчета RSI индикатора. Модифицированы графики. Индикатор виден на отдельном графике сопастовимым с графиком изменения цен.">
+    <list default="true" id="bbe9a5bc-2926-4052-96bf-6df4140211f3" name="Changes" comment="Добавлена возможность запроса и обработки данных по датам начала и конца с возможностью выбора интервалов (минутных, часовых, дневных и т.п.) с учетом возможности библиотеки yfinance. Добавлена возможность при выборе стандартных периодов цикла запроса при неправельном вводе.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_download.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_download.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -214,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736112580040</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Добавлена возможность запроса и обработки данных по датам начала и конца с возможностью выбора интервалов (минутных, часовых, дневных и т.п.) с учетом возможности библиотеки yfinance. Добавлена возможность при выборе стандартных периодов цикла запроса при неправельном вводе.">
+      <option name="closed" value="true" />
+      <created>1736690821490</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1736690821490</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -248,7 +255,8 @@
     <MESSAGE value="Добавлена функция для сохранения результатов рассчета и модификации таблицы в фапйл в формате .csv" />
     <MESSAGE value="Добавлена функция для сохранения результатов рассчета и модификации таблицы в файл в формате .csv" />
     <MESSAGE value="Добавлена функция для функция для рассчета RSI индикатора. Модифицированы графики. Индикатор виден на отдельном графике сопастовимым с графиком изменения цен." />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена функция для функция для рассчета RSI индикатора. Модифицированы графики. Индикатор виден на отдельном графике сопастовимым с графиком изменения цен." />
+    <MESSAGE value="Добавлена возможность запроса и обработки данных по датам начала и конца с возможностью выбора интервалов (минутных, часовых, дневных и т.п.) с учетом возможности библиотеки yfinance. Добавлена возможность при выборе стандартных периодов цикла запроса при неправельном вводе." />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлена возможность запроса и обработки данных по датам начала и конца с возможностью выбора интервалов (минутных, часовых, дневных и т.п.) с учетом возможности библиотеки yfinance. Добавлена возможность при выборе стандартных периодов цикла запроса при неправельном вводе." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -256,7 +264,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>40</line>
+          <line>39</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

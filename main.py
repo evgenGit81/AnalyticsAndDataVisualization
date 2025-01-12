@@ -33,7 +33,6 @@ def main():
             # Fetch stock data
             stock_data = dd.fetch_stock_data(ticker, period, second_request)
 
-
     # Добавление средних значений за период внутри выше принятого
     period2 = input("""Введите период для расчета среднего значения внутри
                         выбранного периода (например, '3d' для одного месяца): """)
@@ -41,14 +40,11 @@ def main():
 
     # Add moving average to the data
     stock_data = dd.add_moving_average(stock_data)
-
     alpha_ = float(input("Введите коэффициент alpha (0 - 1)) для рассчета RSI: "))
     stock_data = dd.rsi_func(stock_data, alpha_)
-
     # Plot the data
     dplt.create_and_save_plot(stock_data, ticker, period, data3, period2, alpha_)
 
-    #
     print("_________________________________________________")
     threshold = float(input("Введите величину процента колебания цены: "))
     dd.notify_if_strong_fluctuations(stock_data, threshold)
