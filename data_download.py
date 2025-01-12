@@ -2,13 +2,27 @@ import yfinance as yf
 import pandas as pd
 
 
-def fetch_stock_data(ticker, period='1mo'):
+def fetch_stock_data(ticker, period, choise):
     """Берет данные по ценам акций в указанный временной период"""
-    stock = yf.Ticker(ticker)
-    data = stock.history(period=period)
-    pd.DataFrame(data).to_csv('out.csv', index=True)
+    pperiod = ['1d', '5d', '1mo', '3mo', '6mo', '1y', '2y', '5y', '10y', 'ytd', 'max']
+    if choise == 'Y' or choise == 'y':
+        """Запрос по датам начала и конца и запись их"""
+        stock = yf.Ticker(ticker)
+        data = stock.history(interval=period[2], start=period[0], end=period[1])
+        pd.DataFrame(data).to_csv('out.csv', index=True)
+        return data
 
-    return data
+    elif choise != 'Y' or choise != 'y':
+        """Запрос данных за обозначенный, принятый в программе, период"""
+        if period in pperiod:
+            stock = yf.Ticker(ticker)
+            data = stock.history(period=period)
+            pd.DataFrame(data).to_csv('out.csv', index=True)
+            return data
+        else:
+            print("Вы допустили ошибку в вводе данных. Повторите ввод.")
+
+            return None
 
 
 def add_moving_average(data, window_size=5):
@@ -20,9 +34,10 @@ def add_moving_average(data, window_size=5):
 
 def calculate_and_display_average_price(data, period2):
     """вычисляет и выводит среднюю цену закрытия акций за заданный период."""
+    print(data['Close'])
     data2 = pd.DataFrame(data['Close'])
     # рассчитывает среднее значение по заданному периоду
-    data3 = data2.resample(period2).mean()
+    data3 = data2.resample(period2, origin='end').mean()
     data["Average_close"] = data3
     data["Average_close"] = data["Average_close"].ffill()
     print(data)

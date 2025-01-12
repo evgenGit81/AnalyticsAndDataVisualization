@@ -8,13 +8,31 @@ def main():
         AAPL (Apple Inc), GOOGL (Alphabet Inc), MSFT (Microsoft Corporation),
         AMZN (Amazon.com Inc), TSLA (Tesla Inc).""")
     print("""Общие периоды времени для данных о запасах включают:
-           1д, 5д, 1мес, 3мес, 6мес, 1г, 2г, 5г, 10л, с начала года, макс.""")
+           1д, 5д, 1мес, 3мес, 6мес, 1г, 2г, 5г, 10л, с начала года, макс
+           (формат ввода: 1d,5d,1mo,3mo,6mo,1y,2y,5y,10y,ytd,max).""")
+    stock_data = None
+    while stock_data is None:
+        ticker = input("Введите тикер акции (например, «AAPL» для Apple Inc): ")
 
-    ticker = input("Введите тикер акции (например, «AAPL» для Apple Inc): ")
-    period = input("Введите период для данных (например, '1mo' для одного месяца): ")
+        second_request = input("Вы хотите ввести период по начальной и конечной дате (Y/N)? ")
+        if second_request == 'Y' or second_request == 'y':
+            period = []
+            start_p = input("Введите дату начала периода в формате 'YYYY-MM-DD': ")
+            period.append(start_p)
+            end_p = input("Введите дату конца периода в формате 'YYYY-MM-DD': ")
+            period.append(end_p)
+            interval_in_p = input("""Введите интервал внутри периода, 
+                            принимаемые интервалы - 1м, 2м, 5м, 15м, 30м, 60м, 90м, 1ч, 1д, 5д, 1нед, 1мес,3мес;
+                            (вводить в формате - 1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 1d, 5d, 1wk, 1mo, 3mo;
+                            внутридневные данные не могут распространяться за последние 60 дней): """)
+            period.append(interval_in_p)
+            stock_data = dd.fetch_stock_data(ticker, period, second_request)
 
-    # Fetch stock data
-    stock_data = dd.fetch_stock_data(ticker, period)
+        else:
+            period = input("Введите период для данных (например, '1mo' для одного месяца): ")
+            # Fetch stock data
+            stock_data = dd.fetch_stock_data(ticker, period, second_request)
+
 
     # Добавление средних значений за период внутри выше принятого
     period2 = input("""Введите период для расчета среднего значения внутри
