@@ -2,8 +2,9 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
-def create_and_save_plot(data, ticker, period, data3, period2, alpha_, filename=None):
+def create_and_save_plot(data, ticker, period, data3, period2, alpha_, num_style, filename=None):
     fig = plt.figure(figsize=(10, 10))
+    plt.style.use(plt.style.available[num_style])
     # Добавлено дополнительное поле для построения RSI
     ax1 = fig.add_axes((0.1, 0.5, 0.8, 0.4))
     ax2 = fig.add_axes((0.1, 0.1, 0.8, 0.3), ylim=(0, 110))

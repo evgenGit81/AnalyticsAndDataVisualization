@@ -1,6 +1,17 @@
 import data_download as dd
 import data_plotting as dplt
 
+styles = [
+    'Solarize_Light2', '_classic_test_patch',
+    '_mpl-gallery', '_mpl-gallery-nogrid', 'bmh',
+    'classic', 'dark_background', 'fast', 'fivethirtyeight',
+    'ggplot', 'grayscale', 'seaborn-v0_8', 'seaborn-v0_8-bright',
+    'seaborn-v0_8-colorblind', 'seaborn-v0_8-dark', 'seaborn-v0_8-dark-palette',
+    'seaborn-v0_8-darkgrid', 'seaborn-v0_8-deep', 'seaborn-v0_8-muted', 'seaborn-v0_8-notebook',
+    'seaborn-v0_8-paper', 'seaborn-v0_8-pastel', 'seaborn-v0_8-poster', 'seaborn-v0_8-talk',
+    'seaborn-v0_8-ticks', 'seaborn-v0_8-white', 'seaborn-v0_8-whitegrid', 'tableau-colorblind10'
+]
+
 
 def main():
     print("Добро пожаловать в инструмент получения и построения графиков биржевых данных.")
@@ -42,8 +53,13 @@ def main():
     stock_data = dd.add_moving_average(stock_data)
     alpha_ = float(input("Введите коэффициент alpha (0 - 1)) для рассчета RSI: "))
     stock_data = dd.rsi_func(stock_data, alpha_)
+
     # Plot the data
-    dplt.create_and_save_plot(stock_data, ticker, period, data3, period2, alpha_)
+    print("Ниже приведены стили графиков и их номера, выберете интерсный вам.")
+    for i in range(len(styles)):
+        print(f"Номер стиля: {i}; название стиля графика: {styles[i]}")
+    num_style = int(input("Введите номер стиля: "))
+    dplt.create_and_save_plot(stock_data, ticker, period, data3, period2, alpha_, num_style)
 
     print("_________________________________________________")
     threshold = float(input("Введите величину процента колебания цены: "))
