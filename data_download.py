@@ -94,4 +94,37 @@ def rsi_func(data, alpha=0.1):
     print(data[f"RSI alpha={alpha}"])
 
     return data
-    
+
+
+def chanel_keltner(data, period4):
+    """Рассчет канала Кетлера.
+     В начале расчитывается типичная цена прайса - средняя цена свечи, рассматриваемого периода,
+     потом ценовой диапазон периода,
+     затем расчитывается простая скользящая средняя для типичной цены
+     и ценового диапазона на промежутке равном десяти рассматриваемым периодам,
+     в закалючении производится рассчет верхних и нижних линий канала Кетлера.
+     Информация взята с
+https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BD%D0%B0%D0%BB_%D0%9A%D0%B5%D0%BB%D1%8C%D1%82%D0%BD%D0%B5%D1%80%D0%B0"""
+    data["Type_Price_0"] = (data["High"] + data["Low"] + data["Close"]) / 3
+    dat2 = pd.DataFrame(data["Type_Price_0"])
+    dat2["Type_Price_t"] = data["Type_Price_0"].resample(period4, origin='end').mean()
+    data["Type_Price_t"] = dat2["Type_Price_t"].ffill()
+    # Ценовой диапазон
+    data["TradingRange_0"] = data["High"] - data["Low"]
+    dat3 = pd.DataFrame(data["TradingRange_0"])
+    dat3["TradingRange_t"] = data["TradingRange_0"].resample(period4, origin='end').mean()
+    data["TradingRange_t"] = dat3["TradingRange_t"].ffill()
+    # Простая скользящая средняя для типичной цены и ценового диапазона
+    # period5 = 10 * period4 #Для оригинального рассчета канала Кельтнера
+    period5 = 2 * period4
+    dat4 = pd.DataFrame(data["Type_Price_0"])
+    dat4["SMA_10_type_prise"] = data["Type_Price_0"].resample(period5, origin='end').mean()
+    data["SMA_10_type_prise"] = dat4["SMA_10_type_prise"].ffill()
+    dat5 = pd.DataFrame(data["TradingRange_0"])
+    dat5["SMA_10_trading_rang"] = data["TradingRange_0"].resample(period5, origin='end').mean()
+    data["SMA_10_trading_rang"] = dat5["SMA_10_trading_rang"].ffill()
+    # Рассчет верхних и нижних линий канала
+    data["Up_Line_Keltner"] = data["SMA_10_type_prise"] + data["SMA_10_trading_rang"]
+    data["Down_Line_Keltner"] = data["SMA_10_type_prise"] - data["SMA_10_trading_rang"]
+
+    return data

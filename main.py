@@ -50,16 +50,25 @@ def main():
     data3 = dd.calculate_and_display_average_price(stock_data, period2)
 
     # Add moving average to the data
+    print("_________________________________________________")
     stock_data = dd.add_moving_average(stock_data)
     alpha_ = float(input("Введите коэффициент alpha (0 - 1)) для рассчета RSI: "))
     stock_data = dd.rsi_func(stock_data, alpha_)
 
+    # Добавление канала Кельтнера
+    print("_________________________________________________")
+    period4 = input("""Ввведите период для построения канала Кельтнера
+                    (он не может быть меньше того периода, что вы указали ранее,
+                    формат ввода - 1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 1d, 2d, 3d, 5d, 1wk, 1mo, 3mo): """)
+    stock_data = dd.chanel_keltner(stock_data, period4)
+
     # Plot the data
+    print("_________________________________________________")
     print("Ниже приведены стили графиков и их номера, выберете интерсный вам.")
     for i in range(len(styles)):
         print(f"Номер стиля: {i}; название стиля графика: {styles[i]}")
     num_style = int(input("Введите номер стиля: "))
-    dplt.create_and_save_plot(stock_data, ticker, period, data3, period2, alpha_, num_style)
+    dplt.create_and_save_plot(stock_data, ticker, period, data3, period2, period4, alpha_, num_style)
 
     print("_________________________________________________")
     threshold = float(input("Введите величину процента колебания цены: "))
@@ -67,7 +76,7 @@ def main():
 
     print("_________________________________________________")
     filename = input("Введите названия файла, для сохранения данных: ")
-    filename = filename + f'_{period}' + f'_{period2}' + f'_{alpha_}'
+    filename = filename + f'_{period}' + f'_{period2}' + f'_Ketler_{period4}' + f'_{alpha_}'
     dd.export_data_to_csv(stock_data, filename)
     input("Нажмите Enter для завершения.")
 

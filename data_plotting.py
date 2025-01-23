@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
-def create_and_save_plot(data, ticker, period, data3, period2, alpha_, num_style, filename=None):
+def create_and_save_plot(data, ticker, period, data3, period2, period4, alpha_, num_style, filename=None):
     fig = plt.figure(figsize=(10, 10))
     plt.style.use(plt.style.available[num_style])
     # Добавлено дополнительное поле для построения RSI
@@ -17,6 +17,12 @@ def create_and_save_plot(data, ticker, period, data3, period2, alpha_, num_style
             ax1.plot(dates, data['Moving_Average'].values, label='Moving Average')
             # добавлен
             ax1.plot(dates2, data3['Close'].values, label=f'Среднее значение периода {period2}')
+            ax1.plot(dates, data['Up_Line_Keltner'].values,
+                     label=f'Верхняя линия канала Кельтнера с периодом {period4}', linestyle='-.')
+            ax1.plot(dates, data['Down_Line_Keltner'].values,
+                     label=f'Нижняя линия канала Кельтнера с периодом {period4}', linestyle='-.')
+            ax1.plot(dates, data['Type_Price_t'].values,
+                     label=f'Типичная цена канала Кельтнера с периодом {period4}', linestyle='-.')
             ax2.plot(dates, data[f"RSI alpha={alpha_}"].values, label=f"RSI alpha={alpha_}")
         else:
             print("Информация о дате отсутствует или не имеет распознаваемого формата.")
@@ -30,6 +36,12 @@ def create_and_save_plot(data, ticker, period, data3, period2, alpha_, num_style
         ax1.plot(data['Date'], data['Moving_Average'], label='Moving Average')
         # добавлен
         ax1.plot(data3['Date'], data3['Close'].values, label=f'Среднее значение периода {period2}')
+        ax1.plot(data['Date'], data['Down_Line_Keltner'].values,
+                 label=f'Нижняя линия канала Кельтнера с периодом {period4}', linestyle='-.')
+        ax1.plot(data['Date'], data['Up_Line_Keltner'].values,
+                 label=f'Нижняя линия канала Кельтнера с периодом {period4}', linestyle='-.')
+        ax1.plot(data['Date'], data['Type_Price_t'].values,
+                 label=f'Типичная цена канала Кельтнера с периодом {period4}', linestyle='-.')
         ax2.plot(data['Date'], data[f"RSI alpha={alpha_}"].values, label=f"RSI alpha={alpha_}")
 
     ax1.set_title(f"{ticker} Цена акций с течением времени", fontsize=11)
