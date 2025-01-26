@@ -46,7 +46,7 @@ def calculate_and_display_average_price(data, period2):
     print("_____________________________________")
     print(data3)
 
-    return data3
+    return data
 
 
 def notify_if_strong_fluctuations(data, threshold):
@@ -128,3 +128,10 @@ https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BD%D0%B0%D0%BB_%D0%9A%D0%B5%D0%BB%
     data["Down_Line_Keltner"] = data["SMA_10_type_prise"] - data["SMA_10_trading_rang"]
 
     return data
+
+
+def mean_close(data):
+    """Функция рассчета среднего значения цены
+    закрытия за весь период."""
+    result = data["Close"].mean()
+    return result

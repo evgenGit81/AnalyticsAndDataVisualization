@@ -78,6 +78,15 @@ def main():
     filename = input("Введите названия файла, для сохранения данных: ")
     filename = filename + f'_{period}' + f'_{period2}' + f'_Ketler_{period4}' + f'_{alpha_}'
     dd.export_data_to_csv(stock_data, filename)
+
+    print("--------------------------------------------------")
+    print("Вывод интерактивного графика")
+    alpha2 = str(alpha_)
+    dplt.interactiv_graf(stock_data, ticker, filename, period2, period4, alpha2)
+
+    print("--------------------------------------------------")
+    print("Среднее значение цены закрытия за рассматриваемый период: ", dd.mean_close(stock_data))
+
     input("Нажмите Enter для завершения.")
 
 
