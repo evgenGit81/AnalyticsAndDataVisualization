@@ -61,9 +61,7 @@ def create_and_save_plot(data, ticker, period, data3, period2, period4, alpha_, 
 
 
 def interactiv_graf(data, ticker, filename, period2, period4, alpha_):
-    """Функция извлекает данные из csv-файла с рассчетами данные
-    и строит нтерактивный график, а также сохраняет его."""
-    # fgraf = go.Figure()
+    """Функция строит интерактивный график, а также сохраняет его."""
     fgraf = make_subplots(rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.2)
     dates = data.index.to_numpy()
     fgraf.add_trace(go.Scatter(x=dates, y=data['Close'], name=f"{ticker} Close"), 1, 1)
